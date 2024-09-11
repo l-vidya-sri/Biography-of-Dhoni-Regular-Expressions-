@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <p>
+        <h1>Registration Form</h1>
+    </p>
+    <form class="login" action="login.html" onsubmit="return validate()">
+        <p>
+            <input class="space" required type="text" id="name" name="name" placeholder="Enter your name" />
+        </p>
+        <p>
+            <input class="space" required type="email" id="email" name="email" placeholder="Enter email" />
+        </p>
+        <p>
+            <input class="space" required type="password" id="password" name="password" placeholder="Enter password" />
+        </p>
+        <p>
+            <input class="space" required type="password" id="conf_password" name="conf_password" placeholder="Confirm Password" />
+        </p>
+        </p>
+        <select  class="space" required name="state">
+            <option value="">Select your state</option>
+            <option value="andra_pradesh">Andra Pradesh</option>
+            <option value="telangana">Telangana</option>
+            <option value="arunachal_pradesh">Arunachal Pradesh</option>
+            <option value="assam">Assam</option>
+        </select>
+        <p>
+        <p>
+            <textarea class="space" required name="address" placeholder="Enter the address"></textarea>
+        </p>
+        <p>
+            <input class="space" required type="number" name="phone_number" placeholder="Enter mobile number" />
+        <p>
+            <input required type="radio" name="gender" />Male
+            <input type="radio" name="gender" />Female
+        </p>
+        <p>
+            <input required type="checkbox" />I accept the terms and conditions
+        </p>
+        <button class="buttonlogin">Register</button>
+    </form>
+    <script>
+        function validate(){
+            var name=document.getElementById("name").value
+            var email=document.getElementById("email").value
+            var password=document.getElementById("password").value
+            var passwordconf=document.getElementById("conf_password").value
+            var emailCheck=/^[a-zA-Z0-9.]+@[a-zA-Z]+\.[a-z]{2,3}$/
+            var nameCheck=/^[a-zA-Z]+(?:[a-zA-Z\s]+)*$/      /*   + is used for repeating the character in particular   * is used for multiple words in a string*/
+            var passwordCheck=/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{6,}$/
+            if(name=="" || name.length<2){
+                window.alert("Please check your name")
+                return false
+            }
+            if(!name.match(nameCheck)){
+                window.alert("Enter valid name")
+                return false
+            }
+            if(email==""){
+                window.alert("Please enter your email")
+                return false
+            }
+            if(!email.match(emailCheck)){
+                window.alert("Please check your email")
+                return false
+            }
+            if(password==""){
+                window.alert("Enter your password")
+                return false
+            }
+            if(!password.match(passwordCheck)){
+                window.alert("Password should be a capital letter and special character and 6 length")
+                return false
+            }
+            if(!passwordconf==password){
+                window.alert("Enter the correct password")
+                return false
+            }
+            return true
+        }
+    </script>
+</body>
+
+</html>

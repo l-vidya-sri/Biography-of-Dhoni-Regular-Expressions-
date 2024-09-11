@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            font-size: 50px;
+            font-weight: bold;
+            font-family: serif;
+            font-style: normal;
+            margin: 3% 5% 3% 16%;
+            color:rgba(130, 24, 136, 0.677)
+        }
+        body{
+            background-color: rgb(236, 197, 207);
+            background-image: url("https://static.vecteezy.com/system/resources/thumbnails/027/205/841/small_2x/login-and-password-concept-3d-illustration-computer-and-account-login-and-password-form-page-on-screen-3d-illustration-png.png");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: top right;
+            background-size: 64%;
+        }
+        .login{
+            border: 1px solid white;
+            width: 300px;
+            height: 250px;
+            border-radius: 25px;
+            margin: 1% 5% 5% 9%;
+            padding:5% 5% 8% 5%;
+            text-align: 20px;
+            font-size: 20px;
+            line-height: 150%;
+            box-shadow: 0px 0px 5px white;
+        }
+        .space{
+            padding: 10px;
+            width: 95%;
+            border-radius: 7px;
+            border:1px solid black;
+        }
+        button{
+            background-color: rgb(82, 120, 25);
+            margin: 5% 30% 10% 34%;
+            color: white;
+            width:90px;
+            height: 40px;
+            border-radius: 25px;
+            font-size: large;
+            
+        }
+        .forget{
+            text-decoration: none;
+            color: rgb(245, 14, 14);
+        }
+        .index{
+            text-decoration: none;
+            font-weight: bold;
+            color:rgb(45, 13, 75);
+        }
+
+    </style>
+</head>
+<body>
+    <p>
+    <h1>Login Form</h1>
+    </p>
+    <form action="task1.html" class="login" onsubmit="return validate()" >
+        <p>
+        <input class="space" required type="name" name="name" placeholder="Enter the name" />
+        </p>
+        <p>
+            <input class="space" required type="password" name="password" placeholder="Enter the password" />
+        </p>
+        <p>
+            <a class="forget" href="">Forget password?</a>
+        </p>
+        <p>
+            Don't have an account! <a class="index" href="index.html">Sign up</a>
+        </p>
+        <button>login</button>
+    </form>
+    <script>
+        function validate(){
+            var name=document.getElementById("name").value
+            var email=document.getElementById("email").value
+            var password=document.getElementById("password").value
+            var emailCheck=/^[a-zA-Z0-9.]+@[a-zA-Z]+\.[a-z]{2,3}$/
+            var nameCheck=/^[a-zA-Z]+(?:[a-zA-Z\s]+)*$/      /*   + is used for repeating the character in particular   * is used for multiple words in a string*/
+            var passwordCheck=/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{6,}$/
+            if(name=="" || name.length<2){
+                window.alert("Please check your name")
+                return false
+            }
+            if(!name.match(nameCheck)){
+                window.alert("Enter valid name")
+                return false
+            }
+            if(email==""){
+                window.alert("Please enter your email")
+                return false
+            }
+            if(!email.match(emailCheck)){
+                window.alert("Please check your email")
+                return false
+            }
+            if(password==""){
+                window.alert("Enter your password")
+                return false
+            }
+            if(!password.match(passwordCheck)){
+                window.alert("Password should be a capital letter and special character and 6 length")
+                return false
+            }
+            return true
+
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+body{
+    background-color: rgb(236, 197, 207);
+    background-image: url("https://static.vecteezy.com/system/resources/thumbnails/027/205/841/small_2x/login-and-password-concept-3d-illustration-computer-and-account-login-and-password-form-page-on-screen-3d-illustration-png.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: top right;
+    background-size: 60%;
+}
+.login{
+    border: 1px solid white;
+    width: 300px;
+    height: 550px;
+    border-radius: 25px;
+    margin: 1% 3% 5% 9%;
+    padding:5% 5% 8% 5%;
+    text-align: 20px;
+    font-size: 20px;
+    line-height: 150%;
+    box-shadow: 0px 0px 5px white;
+}
+h1{
+    font-size: 50px;
+    font-weight: bold;
+    font-family: serif;
+    font-style: normal;
+    margin: 3% 5% 3% 11%;
+    color:rgba(130, 24, 136, 0.677)
+}
+.space{
+    padding: 10px;
+    width: 95%;
+    border-radius: 7px;
+    border:1px solid black;
+}
+.buttonlogin{
+    background-color: rgb(82, 120, 25);
+    margin: 5% 30% 10% 34%;
+    color: white;
+    width:90px;
+    height: 40px;
+    border-radius: 25px;
+    font-size: large;
+    
+}
